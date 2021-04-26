@@ -1,0 +1,15 @@
+@import 'variable';
+@import 'main';
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body { 
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: var(--fontSize);
+    background-color: var(--Verydarkblue);
+    background-image: url(images/bg-stars.svg);
+    background-repeat: no-repeat;
+}

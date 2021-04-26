@@ -1,0 +1,24 @@
+:root {
+  --Grayishblue: hsl(237, 18%, 59%);
+  --Softred: hsl(345, 95%, 68%);
+  --Darkdesaturatedblue: hsl(236, 21%, 26%);
+  --Verydarkblue: hsl(235, 16%, 14%);
+  --darkblue: hsl(234, 17%, 12%);
+  --fontSize: 14px;
+  --mobile: 375px;
+  --desktop: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: var(--fontSize);
+  background-color: var(--Verydarkblue);
+  background-image: url(images/bg-stars.svg);
+  background-repeat: no-repeat;
+}
