@@ -1,0 +1,27 @@
+@import 'variable';
+
+.headline{
+    margin-top: 100px;
+    text-align: center;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 15px;
+}
+
+
+.timer-container{
+    width: 70%;
+    margin: 0 auto;
+    .timer{
+        .timer__card {
+            box-shadow: 0 10px 10px 2px black;
+            height: 80px;
+            width: 80px;
+            background-color: var(--Darkdesaturatedblue);
+            border-radius: 5px;
+        }
+
+
+
+    }
+}
