@@ -22,30 +22,46 @@
   <h1 class="headline">We're launching soon</h1>  
 
   <div class="timer-container">
-<div class="timer">
 
-</div>
-<div class="timer">
-  <div class="timer__card">
-    <div class="timer__counter">0</div>
-  </div>
+      <div class="flip-clock flip-clock-h">
+        <div class="digit digit-left">
+          <!-- ::before -->
+          <div class="card">
+            <div class="card-face card-face-front"></div>
+            <div class="card-face card-face-back"></div>
+          </div>
+          <!-- ::after -->
+        </div>
+        <div class="digit digit-right">
+          <!-- ::before -->
+          <div class="card">
+            <div class="card-face card-face-front"></div>
+            <div class="card-face card-face-back"></div>
+          </div>
+          <!-- ::after -->
+        </div>
+      
 
-<h5 class="timer__text">Days</h5>
-</div>
 
 
 
-<div class="timer">
-  <h5 class="timer__text">Hours</h5>
-</div>
-
-<div class="timer">
-<h5 class="timer__text">Minutes</h5>
-</div>
-
-<div class="timer">
-  <h5 class="timer__text">Seconds</h5>
-  </div>
+        <div class="timer__clock clock__seconds">
+          <div class="timer__digit timer__digit-left">
+            <!-- ::before -->
+            <div class="timer__card">
+              <div class="timer__card-face timer__card-face-front">0</div>
+              <div class="timer__card-face timer__card-face-back">0</div>
+            </div>
+            <!-- ::after -->
+          </div>
+          <div class="timer__digit timer__digit-right">
+            <!-- ::before -->
+            <div class="timer__card">
+              <div class="timer__card-face timer__card-face-front"></div>
+              <div class="timer__card-face timer__card-face-back"></div>
+            </div>
+            <!-- ::after -->
+          </div>
 
   </div>
 

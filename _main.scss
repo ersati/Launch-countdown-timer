@@ -1,6 +1,6 @@
 @import 'variable';
 
-.headline{
+.headline {
     margin-top: 100px;
     text-align: center;
     color: var(--white);
@@ -9,16 +9,92 @@
 }
 
 
-.timer-container{
+.timer-container {
     width: 70%;
     margin: 0 auto;
-    .timer{
-        .timer__card {
-            box-shadow: 0 10px 10px 2px black;
-            height: 80px;
-            width: 80px;
-            background-color: var(--Darkdesaturatedblue);
-            border-radius: 5px;
+
+    user-select: none;
+
+    cursor: default;
+
+    .timer {
+        .timer__clock {
+            display: flex;
+
+            perspective: 100px;
+
+            .timer__digit {
+                position: relative;
+
+                width: 45px;
+                height: 80px;
+
+                box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+
+                .timer__card {
+                    position: relative;
+                    z-index: 1;
+                    width: 100%;
+                    height: 50%;
+                    transform-style: preserve-3d;
+                    transform-origin: bottom;
+                    transform: rotateX(0);
+                    transition: transform 0.7s ease-in-out;
+
+                    .timer__card-face {
+                        position: absolute;
+                      
+                        display: flex;
+                        justify-content: center;
+                      
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                      
+                        -webkit-backface-visibility: hidden;
+                        -moz-backface-visibility: hidden;
+                        backface-visibility: hidden;
+                      }
+
+                      .timer__card-face-front {
+                        align-items: flex-end;
+                      }
+                      
+                      .timer__card-face-back {
+                        align-items: flex-start;
+                      
+                        -webkit-transform: rotateX(-180deg);
+                        -moz-transform: rotateX(-180deg);
+                        transform: rotateX(-180deg);
+                      }
+                  }
+            }
+
+            .timer__digit::before,
+            .timer__digit::after {
+                position: absolute;
+                z-index: 0;
+
+                display: flex;
+                justify-content: center;
+
+                width: 100%;
+                height: 50%;
+                overflow: hidden;
+            }
+            .timer__digit::before {
+                content: attr(data-digit-before);
+              
+                bottom: 0;
+                align-items: flex-start;
+              }
+              
+              .timer__digit::after {
+                content: attr(data-digit-after);
+              
+                top: 0;
+                align-items: flex-end;
+              }
         }
 
 
