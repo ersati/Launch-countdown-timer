@@ -101,3 +101,62 @@
 
     }
 }
+
+
+
+
+
+
+
+
+.digit,
+.digit::before,
+.digit::after,
+.card,
+.card-face {
+  border-radius: 4px;
+}
+
+.timer__digit::before,
+.timer__card-face-back {
+  background: linear-gradient(0, #aaa, #ccc 50%, #fafafa);
+  color: #212121;
+
+  border-top: 1px solid black;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.timer__digit::after,
+.timer__card-face-front {
+  background: linear-gradient(0, #aaa, #bbb 50%, #f5f5f5);
+  color: #212121;
+
+  border-bottom: 1px solid black;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.timer__digit-left,
+.timer__digit-left::before,
+.timer__digit-left::after,
+.timer__digit-left .timer__card,
+.timer__digit-left .timer__timer__card-face {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.timer__digit-right,
+.timer__digit-right::before,
+.timer__digit-right::after,
+.timer__digit-right .timer__card,
+.timer__digit-right .timer__card-face {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.colon {
+  color: black;
+  margin: 0 6px;
+  padding-bottom: 9px;
+}
