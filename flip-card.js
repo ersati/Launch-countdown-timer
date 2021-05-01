@@ -37,6 +37,10 @@
   
     (function runClock() {
       const date = new Date();
+      const futureDate = new Date("Jan 5, 2022 15:37:25");
+      console.log(futureDate)
+      const distanceDate = futureDate - date;
+      console.log(distanceDate)
       const now = {
         h: date.getHours(),
         m: date.getMinutes(),
