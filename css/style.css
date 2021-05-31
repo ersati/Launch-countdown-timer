@@ -1,0 +1,347 @@
+:root {
+  --Grayishblue: hsl(237, 18%, 59%);
+  --Softred: hsl(345, 95%, 68%);
+  --Darkdesaturatedblue: hsl(236, 21%, 26%);
+  --Verydarkblue: hsl(235, 16%, 14%);
+  --darkblue: hsl(234, 17%, 12%);
+  --white: white;
+  --fontSize: 14px;
+  --mobile: 375px;
+  --desktop: 1440px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: var(--fontSize);
+  background-color: var(--darkblue);
+  background-image: url(/images/bg-stars.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+:root {
+  --Grayishblue: hsl(237, 18%, 59%);
+  --Softred: hsl(345, 95%, 68%);
+  --Darkdesaturatedblue: hsl(236, 21%, 26%);
+  --Verydarkblue: hsl(235, 16%, 14%);
+  --darkblue: hsl(234, 17%, 12%);
+  --white: white;
+  --fontSize: 14px;
+  --mobile: 375px;
+  --desktop: 1440px;
+}
+
+.headline {
+  margin-top: 100px;
+  text-align: center;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 15px;
+}
+
+.timer-container {
+  width: 70%;
+  margin: 0 auto;
+  user-select: none;
+  cursor: default;
+}
+
+.timer-container .timer .timer__clock {
+  display: flex;
+  perspective: 100px;
+}
+
+.timer-container .timer .timer__clock .timer__digit {
+  position: relative;
+  width: 45px;
+  height: 80px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.timer-container .timer .timer__clock .timer__digit .timer__card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  transform: rotateX(0);
+  transition: transform 0.7s ease-in-out;
+}
+
+.timer-container .timer .timer__clock .timer__digit .timer__card .timer__card-face {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.timer-container .timer .timer__clock .timer__digit .timer__card .timer__card-face-front {
+  align-items: flex-end;
+}
+
+.timer-container .timer .timer__clock .timer__digit .timer__card .timer__card-face-back {
+  align-items: flex-start;
+  transform: rotateX(-180deg);
+}
+
+.timer-container .timer .timer__clock .timer__digit::before,
+.timer-container .timer .timer__clock .timer__digit::after {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.timer-container .timer .timer__clock .timer__digit::before {
+  content: attr(data-digit-before);
+  bottom: 0;
+  align-items: flex-start;
+}
+
+.timer-container .timer .timer__clock .timer__digit::after {
+  content: attr(data-digit-after);
+  top: 0;
+  align-items: flex-end;
+}
+
+.digit,
+.digit::before,
+.digit::after,
+.card,
+.card-face {
+  border-radius: 4px;
+}
+
+.timer__digit::before,
+.timer__card-face-back {
+  background: linear-gradient(0, #aaa, #ccc 50%, #fafafa);
+  color: #212121;
+  border-top: 1px solid black;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.timer__digit::after,
+.timer__card-face-front {
+  background: linear-gradient(0, #aaa, #bbb 50%, #f5f5f5);
+  color: #212121;
+  border-bottom: 1px solid black;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.timer__digit-left,
+.timer__digit-left::before,
+.timer__digit-left::after,
+.timer__digit-left .timer__card,
+.timer__digit-left .timer__timer__card-face {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.timer__digit-right,
+.timer__digit-right::before,
+.timer__digit-right::after,
+.timer__digit-right .timer__card,
+.timer__digit-right .timer__card-face {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.colon {
+  color: black;
+  margin: 0 6px;
+  padding-bottom: 9px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.flip-clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  line-height: 0;
+}
+
+.flip-clock-container * {
+  user-select: none;
+  cursor: default;
+}
+
+.flip-clock {
+  display: flex;
+  perspective: 1000px;
+  box-shadow: 0 15px 10px 1px;
+  margin-right: 20px;
+}
+
+.digit {
+  position: relative;
+  width: 60px;
+  height: 100px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.digit::before,
+.digit::after {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.digit::before {
+  content: attr(data-digit-before);
+  bottom: 0;
+  align-items: flex-start;
+}
+
+.digit::after {
+  content: attr(data-digit-after);
+  top: 0;
+  align-items: flex-end;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  transform: rotateX(0);
+  transition: transform 0.7s ease-in-out;
+}
+
+.card.flipped {
+  transform: rotateX(-180deg);
+}
+
+.card-face {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.card-face-front {
+  align-items: flex-end;
+}
+
+.card-face-back {
+  align-items: flex-start;
+  transform: rotateX(-180deg);
+}
+
+.digit::before,
+.digit::after,
+.card-face-front,
+.card-face-back {
+  background: white;
+  color: black;
+}
+
+.digit,
+.digit::before,
+.digit::after,
+.card,
+.card-face {
+  border-radius: 4px;
+}
+
+.digit::before,
+.card-face-back {
+  background: var(--Darkdesaturatedblue);
+  color: var(--Softred);
+  border-top: 1px solid black;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.digit::after,
+.card-face-front {
+  background: var(--Darkdesaturatedblue);
+  color: var(--Softred);
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.7);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.digit-left,
+.digit-left::before,
+.digit-left::after,
+.digit-left .card,
+.digit-left .card-face {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.digit-right,
+.digit-right::before,
+.digit-right::after,
+.digit-right .card,
+.digit-right .card-face {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.colon {
+  color: black;
+  margin: 0 6px;
+  padding-bottom: 9px;
+}
+
+.footer {
+  background-image: url(/images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 30vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer .footer__social-container {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.footer .footer__social-container .footer__link {
+  margin: 15px;
+}
+
+.footer .attribution {
+  margin-top: 20px;
+}
